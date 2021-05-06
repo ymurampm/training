@@ -1,0 +1,5 @@
+China-Beijing
+India-New Delhi
+Japan-Tokyo
+Russia-Moscow
+Indonesia-Jakarta

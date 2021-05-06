@@ -1,0 +1,46 @@
+China-Beijing
+India-New Delhi
+Japan-Tokyo
+Democratic Republic of the Congo-Kinshasa
+Russia-Moscow
+Indonesia-Jakarta
+South Korea-Seoul
+Egypt-Cairo
+Mexico-Mexico City
+United Kingdom-London
+Bangladesh-Dhaka
+Peru-Lima
+Iran-Tehran
+Thailand-Bangkok
+Vietnam-Hanoi
+Saudi Arabia-Riyadh
+Hong Kong-Hong Kong
+Iraq-Baghdad
+Chile-Santiago
+Singapore-Singapore
+Turkey-Ankara
+Germany-Berlin
+Syria-Damascus
+Algeria-Algiers
+Spain-Madrid
+North Korea-Pyongyang
+Afghanistan-Kabul
+Kenya-Nairobi
+Ethiopia-Addis Ababa
+Argentina-Buenos Aires
+Italy-Rome
+Ukraine-Kyiv
+Taiwan-Taipei
+Jordan-Amman
+Angola-Luanda
+Guatemala-Guatemala City
+South Africa-Pretoria
+France-Paris
+Uzbekistan-Tashkent
+Azerbaijan-Baku
+Cuba-Havana
+Cambodia-Phnom Penh
+Romania-Bucharest
+Sudan-Khartoum
+Venezuela-Caracas
+Republic of the Congo-Brazzaville
