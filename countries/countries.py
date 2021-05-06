@@ -47,7 +47,7 @@ def load_data(cc):
 def save_data(name,cc):
     r=open("results.txt","r")
     resultdata = r.readlines()
-    print(resultdata)
+
     user_exist=False
     for i in range(len(resultdata)):
         lst=resultdata[i].split("-")
@@ -59,7 +59,6 @@ def save_data(name,cc):
     if user_exist==False:
         resultdata.append(name+"-"+str(cc.score)+"\n")
         
-    print(resultdata)
     w=open("results.txt","w")
     w.writelines(resultdata)
     w.close()
