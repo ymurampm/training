@@ -13,6 +13,13 @@
 #If player is playing again and his username exists in the result file then compare his score. 
 # If existing score is lesser than current score then put this score in the file else let that score be
 
+# login feature:
+# ask password
+# if the user is new, register the user
+# if password is entered, check if it is correct.
+# If user fails to input correct password three times, lock him out.
+
+
 class CountryCapital:
     def __init__(self):
         self.score = 0
@@ -22,8 +29,50 @@ class CountryCapital:
     def appendCC(self, country, capital):
         self.countries.append(country)
         self.capitals.append(capital.replace("\n",""))
-        
 
+class UserBank:
+    def __init__(self):
+        self.names = []
+        self.passwords = []
+    
+    def appendUser(self, name, password):
+        self.names.append(name)
+        self.passwords.append(password)
+
+    def saveUser(self,name,password):
+        u=open("user.txt","r")
+        userdata = u.readlines()
+        userdata.append(name+"-"+password+"\n")
+        w=open("user.txt","w")
+        w.writelines(userdata)
+        w.close()
+
+    def isExist(self, name):
+        exist = False
+        for a in self.names:
+            if name == a:
+                exist = True
+        return exist
+
+    def authenticate(self, name, password):
+        for a in range(len(self.names)):
+            if self.names[a]==name:
+                if self.passwords[a].replace("\n","")==password:
+                    return True
+                else:
+                    return False
+
+def load_userdata(users):
+    u=open("user.txt","r")
+    userdata = u.readlines()
+
+    for line in userdata:
+        lst=line.split("-")
+        users.appendUser(lst[0],lst[1])
+
+    return userdata
+    f.close()
+    
 def load_data(cc):
     f=open("country2.txt","r")
     countrydata = f.readlines()
@@ -65,7 +114,7 @@ def save_data(name,cc):
 
 
 def quiz(country, capital):
-    capital_in = input("What is the capital of "+country)
+    capital_in = input("What is the capital of "+country+":")
     if capital_in == capital:
         return True
     else:
@@ -73,15 +122,38 @@ def quiz(country, capital):
 
 # main
 cc = CountryCapital()
+users = UserBank()
+load_userdata(users)
+
 name = input("Type your name:")
-highestscore=load_data(cc)
+if users.isExist(name):
+    authSuccess = False
+    for i in range(0,3):
+        password = input("Input Password:")
+        if users.authenticate(name,password):
+            authSuccess = True
+            print("Successfully authenticated!")
+            break
+        else:
+            print("Wrong password.")
+else:
+    password = input("User does not exist. Register as a new user. Input new password:")
+    users.appendUser(name,password)
+    users.saveUser(name,password)
+    print("User successfully registered!")
+    authSuccess = True
 
-for i in range(len(cc.countries)):
-    if quiz(cc.countries[i],cc.capitals[i]) :
-        print("Correct!")
-        cc.score+=1
-    else:
-        print("Not Correct. Answer is "+cc.capitals[i])
+if authSuccess==True:
+    highestscore=load_data(cc)
 
-save_data(name,cc)
+    for i in range(len(cc.countries)):
+        if quiz(cc.countries[i],cc.capitals[i]) :
+            print("Correct!")
+            cc.score+=1
+        else:
+            print("Not Correct. Answer is "+cc.capitals[i])
+
+    save_data(name,cc)
+else:
+    print("Failed to authenticate. Exit Game.")
 
