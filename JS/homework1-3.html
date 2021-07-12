@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>prime check</title>
+<script>
+// Write a javascript code to input a number and check if its prime or not
+
+
+var num=prompt("Enter a number")
+
+prime=1;
+
+for(i=2; i<=num-1 ; i++)
+{
+if (num % i == 0)
+{
+prime=0;
+}
+}
+
+if (prime==1)
+{
+ document.write(num+" is Prime Number")
+}
+else
+{
+    
+ document.write(num+" is NOT Prime Number")
+}
+
+</script>
+</head>
+<body>
+</body>
+</html>
