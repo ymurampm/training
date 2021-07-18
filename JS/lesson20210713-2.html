@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>fraction calculator</title>
+<script>
+// Write a javascript code to input two numbers and print all the prime numbers within that range
+// e.g. 2 - 10  -> 2, 3, 5, 7
+
+var num1=parseInt(prompt("Enter a number1"))
+var num2=parseInt(prompt("Enter a number2"))
+
+for(i=num1; i<=num2 ; i++)
+{
+  for (j=2 ; j<i-1 ; j++)
+  {
+   if (i % j == 0){
+     break;
+   }
+
+  }
+  if (j==i-1)
+  {
+    document.write(i)
+    document.write("<br>")
+  }
+}
+
+</script>
+</head>
+<body>
+</body>
+</html>
