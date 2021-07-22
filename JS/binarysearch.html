@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>
+        Binary Search
+      </title>
+      <script>      
+
+// Write a javascript code to create an array of 10 numbers. Input a number and search if it exists in the array or not 
+// If yes print found else print not found
+
+
+// create random array
+var arrayvalue = [];
+var length = 10;
+var max=50;
+for (i = 0; i < length; i++) {
+  arrayvalue.push(parseInt((Math.random()*max)));
+}
+
+var num=parseInt(prompt("Enter a number"))
+
+arrayvalue.sort();
+
+var begin=0;
+var end=arrayvalue.length-1;
+
+while(begin<=end){
+  
+	var mid = parseInt((end+begin)/2) ;
+
+	if (num==arrayvalue[mid]){
+		document.write("found");
+		break;
+	}
+	else if (num>arrayvalue[mid]){
+	begin=mid+1;
+
+	}else if(num<arrayvalue[mid]){
+		end=mid-1;
+	}
+}
+
+if (begin>end){
+	document.write("not found");
+}
+
+      </script>
+    </head>
+  
+  </html>

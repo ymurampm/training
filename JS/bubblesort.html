@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>
+        Bubble Sort
+      </title>
+      <script>      
+
+// Bubble Sort
+
+// create random array
+var arrayvalue = [];
+var length = 10;
+var max=50;
+for (i = 0; i < length; i++) {
+  arrayvalue.push(parseInt((Math.random()*max)));
+}
+
+document.write("Original Array:"+arrayvalue + "<br>")
+
+for (i=0 ; i<=arrayvalue.length-1; i++ ){
+	for (j=i ; j<=arrayvalue.length-1; j++ ){
+		if (arrayvalue[j]<arrayvalue[i]){
+		
+		var tmp;
+		tmp=arrayvalue[i];
+		arrayvalue[i]=arrayvalue[j];
+		arrayvalue[j]=tmp;
+		}
+	}
+
+	document.write("Array["+(i+1)+"]:"+arrayvalue + "<br>")
+}
+
+document.write("Sorted Array:"+arrayvalue)
+
+      </script>
+    </head>
+  
+  </html>
