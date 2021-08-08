@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>
+        email address validation
+      </title>
+      <script>
+    // Write a Javascript code to input email id. Perform the following validations.
+    // 1) Email id should not begin or end with @ 
+    // 2) Email id should have one and only one @ 
+    // 3) Email id should have atleast one '.' 
+    // 4) Email id should not have space.
+    // Only allow characters, digits, _ , @ and .
+
+    var email=prompt("Input email id");
+    var ln=email.length;
+    var validchar = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","0","1","2","3","4","5","6","7","8","9","_","@","."];
+    var valid=1;
+    var errorcode="";
+
+    if (email[0]=="@"){
+      valid=0 ;
+      errorcode="Email id should not begin or end with @ ";
+    }
+    else if(email[ln-1]=="@"){
+      valid=0 ;
+      errorcode="Email id should not begin or end with @ ";
+    }else if(email.split("@").length!=2){
+      valid=0 ;
+      errorcode="Email id should have one and only one @ "
+    } else if(email.split(".").length<2){
+      valid=0 ;
+      errorcode="Email id should have atleast one '.' "
+    } else if(email.split(" ").length>1){
+      valid=0 ;
+      errorcode="Email id should not have space."
+    }
+
+    for (i=0 ; i<ln ; i++){
+     if (validchar.indexOf(email[i])==-1)
+     {valid = 0 ;
+     errorcode=email[i]+": Only allow characters, digits, _ , @ and ."
+     }
+    }
+
+    if (valid==1){
+    document.write("email id is valid");
+    }
+    else{
+      document.write("email id is invalid");
+      document.write("<br>"+errorcode);
+    }
+
+      </script>
+    </head>
+  
+  </html>
