@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>
+        email address validation
+      </title>
+      <script>
+    // Write a pattern that matches e-mail addresses. Go to the editor
+    // The personal information part contains the following ASCII characters.
+    // Uppercase (A-Z) and lowercase (a-z) English letters.
+    // Digits (0-9).
+    // Characters ! # $ % & ' * + - / = ? ^ _ ` { | } ~
+    // Character . ( period, dot or fullstop) provided that it is not the first or last character and it will not come one after the other.
+
+    var valid=1;
+
+    var email=prompt("Input email id");
+          //var regexp=/\d/g
+          // https://rubular.com/
+          var regexp=/[A-Za-z0-9!#$%&'*+-\/=?^_`{|}~]+@[A-Za-z0-9!#$%&'*+-\/=?^_`{|}~](.{1}[A-Za-z0-9!#$%&'*+-\/=?^_`{|}~]+)/
+          
+          if(regexp.test(email)==false)
+          	alert("Email id is invalid")
+          else
+           alert("Hello "+email)
+
+    if (valid==1){
+    document.write("email id is valid");
+    }
+    else{
+      document.write("email id is invalid");
+    }
+
+      </script>
+    </head>
+  
+  </html>
