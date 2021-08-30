@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>
+        Tic Tac Toe
+      </title>
+      <style>
+        p {position:absolute;height:50px;width:50px;border-style:solid;border-color:white;border-width:5px;border-radius:10px;font-size:40px; text-align:center}
+    h1 {text-align:center; font-size:20;  color:white ; font-family:Arial}
+    </style>
+      <script>
+        var turn='X';
+        var gameend=false;
+        function getChar(id){
+          return document.getElementById(id).innerText
+        }
+
+        function checkWin(id){
+          
+          switch (id) {
+              case 'p1':
+              if ((getChar('p1')==getChar('p2') && getChar('p1')==getChar('p3')) || 
+              (getChar('p1')==getChar('p4') && getChar('p1')==getChar('p7')) || 
+              (getChar('p1')==getChar('p5') && getChar('p1')==getChar('p9'))){
+                alert(getChar('p1')+ " won game")
+                gameend=true;
+              }
+
+              break;
+
+            case 'p2':
+            if ((getChar('p1')==getChar('p2') && getChar('p2')==getChar('p3')) || 
+              (getChar('p2')==getChar('p5') && getChar('p1')==getChar('p8'))) {
+                alert(getChar('p1')+ " won game")
+                gameend=true;
+              }
+              break;
+
+            case 'p3':
+            if ((getChar('p1')==getChar('p3') && getChar('p2')==getChar('p3')) || 
+              (getChar('p3')==getChar('p6') && getChar('p1')==getChar('p9')) || 
+              (getChar('p3')==getChar('p5') && getChar('p3')==getChar('p7'))){
+                alert(getChar('p3')+ " won game")
+                gameend=true;
+              }
+            break;
+              
+            case 'p4':
+            if ((getChar('p4')==getChar('p5') && getChar('p4')==getChar('p6')) || 
+              (getChar('p1')==getChar('p4') && getChar('p4')==getChar('p7'))) {
+                alert(getChar('p4')+ " won game")
+                gameend=true;
+              }
+            break;
+
+            case 'p5':
+              
+            case 'p1':
+              if ((getChar('p2')==getChar('p5') && getChar('p5')==getChar('p8')) || 
+              (getChar('p4')==getChar('p5') && getChar('p5')==getChar('p6')) || 
+              (getChar('p1')==getChar('p5') && getChar('p5')==getChar('p9')) || 
+              (getChar('p3')==getChar('p5') && getChar('p5')==getChar('p7'))){
+                alert(getChar('p5')+ " won game")
+                gameend=true;
+              }
+            break;
+              
+            case 'p6':
+            if ((getChar('p4')==getChar('p6') && getChar('p5')==getChar('p6')) || 
+              (getChar('p3')==getChar('p6') && getChar('p6')==getChar('p9'))) {
+                alert(getChar('p6')+ " won game")
+                gameend=true;
+              }
+            
+            break;  
+
+            case 'p7':
+            if ((getChar('p1')==getChar('p7') && getChar('p4')==getChar('p7')) || 
+              (getChar('p7')==getChar('p8') && getChar('p7')==getChar('p9')) || 
+              (getChar('p7')==getChar('p5') && getChar('p7')==getChar('p3'))){
+                alert(getChar('p7')+ " won game")
+                gameend=true;
+              }
+            break;
+
+            case 'p8':
+            if ((getChar('p7')==getChar('p8') && getChar('p8')==getChar('p9')) || 
+              (getChar('p2')==getChar('p8') && getChar('p5')==getChar('p8'))) {
+                alert(getChar('p8')+ " won game")
+                gameend=true;
+              }
+              
+              break;
+
+            case 'p9':
+            if ((getChar('p7')==getChar('p9') && getChar('p8')==getChar('p9')) || 
+              (getChar('p3')==getChar('p9') && getChar('p6')==getChar('p9')) || 
+              (getChar('p1')==getChar('p9') && getChar('p5')==getChar('p9'))){
+                alert(getChar('p9')+ " won game")
+                gameend=true;
+              }
+            break;
+            }
+
+
+        }
+
+        function checkDraw(){
+          var draw=true
+          for (i = 1; i <9; i++) {
+          var id ="p"+parseInt(i);
+          if  (document.getElementById(id).innerText=="") draw=false;
+          }
+          if (draw==true && gameend==false){alert("Draw game")}
+        }
+
+        function playgame(id){
+        var str=document.getElementById(id).innerText
+        if (gameend==false){
+          if (str==""){
+          if(turn=='X'){
+            document.getElementById(id).style.color='orange'
+          document.getElementById(id).innerText=turn
+          turn='0'
+          checkWin(id)
+          }
+          else{
+          document.getElementById(id).style.color='green'
+          document.getElementById(id).innerText=turn
+          turn='X'
+          }}
+          
+          checkWin(id)
+          checkDraw();
+        }
+      }
+
+
+      </script>
+    </head>
+  
+  <body bgcolor="#342a85">
+    <h1>TIC TAC TOE</h1>
+<p id="p1" style="left:600px;top:200px;" onclick="playgame('p1')"> </p>
+<p id="p2" style="left:660px;top:200px;" onclick="playgame('p2')"> </p>
+<p id="p3" style="left:720px;top:200px;" onclick="playgame('p3')"> </p>
+<p id="p4" style="left:600px;top:260px;" onclick="playgame('p4')"> </p>
+<p id="p5" style="left:660px;top:260px;" onclick="playgame('p5')"> </p>
+<p id="p6" style="left:720px;top:260px;" onclick="playgame('p6')"> </p>
+<p id="p7" style="left:600px;top:320px;" onclick="playgame('p7')"> </p>
+<p id="p8" style="left:660px;top:320px;" onclick="playgame('p8')"> </p>
+<p id="p9" style="left:720px;top:320px;" onclick="playgame('p9')"> </p>
+    
+  </body>
+
+  </html>

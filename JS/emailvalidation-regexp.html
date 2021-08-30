@@ -17,8 +17,9 @@
     var email=prompt("Input email id");
           //var regexp=/\d/g
           // https://rubular.com/
-          var regexp=/[A-Za-z0-9!#$%&'*+-\/=?^_`{|}~]+@[A-Za-z0-9!#$%&'*+-\/=?^_`{|}~](.{1}[A-Za-z0-9!#$%&'*+-\/=?^_`{|}~]+)/
-          
+         // var regexp=/[A-Za-z0-9!#$%&'*+-\/=?^_`{|}~]+@[A-Za-z0-9!#$%&'*+-\/=?^_`{|}~](.{1}[A-Za-z0-9!#$%&'*+-\/=?^_`{|}~]+)/
+          var regexp = /[a-zA-Z0-9+_.-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+        // test@in.gmail.com
           if(regexp.test(email)==false)
           	alert("Email id is invalid")
           else
@@ -34,4 +35,4 @@
       </script>
     </head>
   
-  </html>
+  </html>4
