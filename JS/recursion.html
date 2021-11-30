@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>
+        recursive functions
+      </title>
+      <script>
+
+/**
+	 * 
+	 * @param x
+	 * @param n: assume n is more than or equal to 0
+	 * @return x to the power of n
+	 * IMPORTANT: for any integer x, x to the power of 0 is 1 
+	 */
+   function power(x,  n) {
+    if (n== 0) return 1
+    return x * power(x, n-1) }
+
+   /**
+	 * 
+	 * @param n
+	 * @return number of digits in n
+	 * For example,
+	 * 
+	 * countDigits(1729) = 4
+	 * countDigits(-1729) = 4
+	 * countDigits(0) = 0 (That's the termination case)
+	 * countDigits(3) = 1
+	 * countDigits(8) = 1
+	 * countDigits(-43) = 2
+	 */
+	function countDigits( n) {
+  if ((n < 1) && (n > -1)) return 0
+  return 1 + countDigits(n/10)
+  
+ }
+
+
+  /**
+	 * 
+	 * @param n
+	 * @return the sum of the even digits in n
+	 */
+	function sumEvenDigits( n) {
+		if (n==0) return 0
+		var digit = n%10 ;
+        if (digit%2==0){
+            return digit+sumEvenDigits(Math.floor(n/10))
+		}
+		else
+		return sumEvenDigits(Math.floor(n/10))
+
+	}
+
+  /**
+	 * 
+	 * @param n
+	 * @param d: digit to count, d is between 0 and 9 (inclusive on both sides)
+	 * @return the number of times digit d exists in integer n
+	 * IMPORTANT countDigit(0, d) for any d should return 0
+	 * 
+	 * countDigit(10074, 0) = 2
+	 * countDigit(38, 8) = 1
+	 * countDigit(888, 8) = 3
+	 * countDigit(12345, 6) = 0
+	 * countDigit(0, 0) = 0 (NOT 1)
+	 */
+	function countDigit( n,  d) {
+	     n = Math.abs(n); 
+
+  }
+
+  /**
+	 * 
+	 * @param n
+	 * @return the first digit of n (0 if n is 0)
+	 */
+	function firstDigit( n) {
+	     n = Math.abs(n); }
+
+
+       //factorial of a number, fibonacci 
+
+
+
+
+
+
+ document.write("power(3,2)="+power(3,2)+"<br>")
+ document.write("countDigits(1234)="+countDigits(1234)+"<br>")
+ document.write("sumEvenDigits(1234)="+sumEvenDigits(1234)+"<br>")
+
+
+      </script>
+    </head>
+  
+  </html> 

@@ -1,0 +1,60 @@
+
+#btnstart {
+    position:absolute ;
+    top:50% ;
+    left:50%;
+    height: 100px;
+    width: 200px;
+
+    background-color: grey;
+    color:black;
+    font-size: 24px;
+    text-align: center;
+    
+    border-radius: 5px;
+}
+
+#btnstart:hover {
+background-color: black;
+color:white
+}
+
+#quiz{
+    position:absolute ;
+    top:20px ;
+    left:20px ;
+    visibility: hidden;
+}
+#btnsubmit {
+    position:fixed ;
+    top:90% ;
+    left:60%;
+    height: 50px;
+    width: 100px;
+    
+    visibility: hidden;
+
+    background-color: grey;
+    color:black;
+    font-size: 24px;
+    text-align: center;
+    
+    border-radius: 5px;
+}
+
+#btnreset {
+    position:fixed ;
+    top:90% ;
+    left:70%;
+    height: 50px;
+    width: 100px;
+    
+    visibility: hidden;
+
+    background-color: grey;
+    color:black;
+    font-size: 24px;
+    text-align: center;
+    
+    border-radius: 5px;
+}

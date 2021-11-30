@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>
+        classes
+      </title>
+      <script>
+class Employee
+      {
+      		constructor(code, name,salary)
+          {
+             this.empcode=code;
+             this.empname=name;
+             this.salary=salary;
+          }
+          
+          printDetails()
+          {
+             document.write(this.empcode+" "+this.empname+" "+this.salary)
+          }
+          static printHello()
+          {
+             document.write("Welcome to the Organisation");
+          }
+      
+      }
+      
+      class MyEmployee extends Employee
+      {
+         constructor(code, name, salary,designation, department)
+         {
+        super(code, name, salary)
+         this.designation=designation;
+         this.department=department;
+         }
+        display()
+        {
+           document.write(this.designation+" "+this.department)
+        }
+      }
+      
+      let emp1=new MyEmployee("e111","Harry", 56000, "Manager", "Accounts");
+      let emp2=new MyEmployee("e211","Shawn", 23000, "Clerk", "HR");
+      emp1.printDetails();
+      emp1.display();
+      
+      Employee.printHello()
+
+      </script>
+    </head>
+  
+  </html>

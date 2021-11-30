@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>
+        recursive functions
+      </title>
+      <script>
+  
+/**
+	 * 
+	 * @param n 
+	 * @return sum of all positive even numbers till n (including n)
+	 * (2 + 4 + 6 + ... (n or n-1))
+	 * For example,
+	 * if n = 8, return 2+4+6+8=20
+	 * if n = 5, return 2+4=6
+	 * return 0 if n is less than or equal to 1
+	 * 
+	 * HINT: if the number is odd, ignore it and return sumEven(n-1)
+	 */
+  //  function sumEven(n) {
+  //     if (n<=0) 
+  //     return 0
+      
+  //     if (n%2==0){
+  //      return n + sumEven(n-1)
+  //     }
+  //     return sumEven(n-1)
+  //  }
+
+
+  /**
+	 * 
+	 * @param n 
+	 * @return sum of the squares of all positive odd numbers up to n.
+	 * (note, n itself may or may not be an odd number)
+	 * return 0 if n is less than or equal to 0
+	 * For example:
+	 * n = 6, return 5*5 + 3*3 + 1*1
+	 * n = 7, return 7*7 + 5*5 + 3*3 + 1*1
+	 * 
+	 * HINT: If n is even, ignore it and return sumOddSquares(n-1)
+	 */
+
+	// function sumOddSquares(n) {
+  //   if (n<=0)
+  //    return 0
+  //   if (n%2==1){
+  //     return n*n + sumOddSquares(n-1)
+  //   }
+  //   else {return sumOddSquares(n-1)
+  //   }
+
+  /**
+	 * 
+	 * @param str
+	 * @return true if str contains an y digit ('0' to '9'), false otherwise.
+	 * return false if str is null.
+	 * 
+	 * HINT: you can check that a char ch is a digit using Character.isDigit(ch)
+	 */
+	// function containsDigit( str) {
+  //   if (str=="")
+  //     return false
+    
+  //   if (str.charCodeAt(0)>=48 && str.charCodeAt(0)<=57 )
+  //     return true
+  //   else{
+  //     return containsDigit(str.substring(1))
+  //   }
+  // }
+  // alert(containsDigit("000"))
+
+
+/**
+	 * 
+	 * @param str
+	 * @return true if str contains ONLY digits ('0' to '9'), false otherwise.
+	 * 
+	 * !!!!!!IMPORTANT!!!!!! return true if str is empty
+	 * 
+	 * return false if str is null.
+	 * 
+	 * HINT: you can check that a char ch is a digit using Character.isDigit(ch)
+	 */
+  //  function isNumeric(str) {
+  //   if (str=="")
+  //      return true
+    
+  //   if (str.charCodeAt(0)<48 || str.charCodeAt(0)>57 )
+  //     return false
+  //   else{
+  //      return isNumeric(str.substring(1))
+  //    }
+  //  }
+  //  alert(isNumeric("000a"))
+
+
+  /**
+	 * 
+	 * @param str
+	 * @param target
+	 * @return true if String str contains character target, false otherwise.
+	 * return false if str is null
+	 * IMPORTANT: You may not call the methods indexOf or lastIndexOf or contains from String class
+   **/
+	function contains( str, target) {
+  if (str=="")
+  return false
+  if (str.charAt(0)==target)
+   return true
+  else return contains(str.substring(1),target)
+  }
+  alert(contains("000a","0"))
+
+      </script>
+    </head>
+  
+  </html>
