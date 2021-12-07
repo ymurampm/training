@@ -1,47 +1,24 @@
-# A number is said to be Disarium if the sum of its digits raised to their respective positions is the number itself.
+# linear search
 
-# Create a function that determines whether a number is a Disarium or not.
+import random
 
-# Examples
-# is_disarium(75) ➞ False
-# # 7^1 + 5^2 = 7 + 25 = 32
+def create_random_array(x):
+  tmp=[]
+  for i in range(x):
+    tmp.append(random.randint(0,10))
+  return tmp
 
-# is_disarium(135) ➞ True
-# # 1^1 + 3^2 + 5^3 = 1 + 9 + 125 = 135
+def searchchar(x,y):
+  flg=False
+  for i in range(len(x)):
+    if (x[i]==y):
+      print("true")
+      flg=True
+      break
+  if (flg==False):
+    print("false")
 
-# is_disarium(544) ➞ False
+list=(create_random_array(10))
+print(list)
+searchchar(list,0)
 
-# is_disarium(518) ➞ True
-
-# is_disarium(466) ➞ False
-
-# is_disarium(8) ➞ True
-
-#3x3の表の足し算関数
-
-def get_digit(x):
-  return len(str(x))
-
-def get_nth_digit(x,y):
-  return (x // (10**(y-1))) % 10
-
-def disarium(x):
-  disarium_num=0
-  digit=get_digit(x)
-  for i in range(get_digit(x)):
-    base=get_nth_digit(x,i+1)
-    # print(base)
-    for j in range(digit-i-1):
-      base=base*get_nth_digit(x,i+1)
-    # print(base)
-    disarium_num=disarium_num+base
-
-  return disarium_num
-
-def is_disarium(y):
-  if y==disarium(y):
-    return True
-  else:
-    return False
-
-print(is_disarium(135))
